@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.9.0</title>
-<link rel="stylesheet" href="styles-v11.css">
+<title>ポケモン構築管理 Ver.12</title>
+<link rel="stylesheet" href="styles-v12.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -13,37 +13,14 @@
 <div class="app">
   <section id="listView" class="view active">
     <div class="topbar">
-      <div class="title-row"><h1>ポケモン構築管理</h1><span class="sub">自分専用・自動保存</span></div>
-      <div class="toolbar">
+      <div class="title-row">
+        <div><h1>ポケモン構築管理</h1><span class="sub">自分専用・自動保存</span></div>
+        <button id="menuBtn" class="menu-btn" aria-label="設定メニューを開く" aria-expanded="false">☰</button>
+      </div>
+      <div class="toolbar compact-toolbar">
         <input id="searchInput" class="search" placeholder="使用者・順位・構築名・ポケモン名で検索" />
         <button id="newTeamBtn" class="btn primary">＋新規</button>
         <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
-        <button id="exportBtn" class="btn">書き出し</button>
-        <button id="importBtn" class="btn">読み込み</button>
-        <input id="importFile" type="file" accept="application/json" hidden />
-        <div class="account">
-          <span id="syncState" class="sync-state">この端末に保存</span>
-          <button id="firebaseSetupBtn" class="btn">Firebase設定</button>
-          <button id="loginBtn" class="btn primary">Googleログイン</button>
-          <button id="logoutBtn" class="btn" style="display:none">ログアウト</button>
-          <img id="userPhoto" alt="" style="display:none">
-        </div>
-      </div>
-      <div class="team-scope-tabs" role="tablist" aria-label="構築区分">
-        <button class="team-scope-tab active" data-team-scope="world" role="tab">🌍 World Team</button>
-        <button class="team-scope-tab" data-team-scope="my" role="tab">⭐ My Team</button>
-      </div>
-      <div class="season-panel">
-        <div class="season-panel-title">シーズン管理</div>
-        <div class="seasonbar">
-        <strong>表示中</strong>
-        <select id="seasonSelect"></select>
-        <input id="newSeasonInput" class="season-new-input" placeholder="例：S36" aria-label="新しいシーズン名">
-        <button id="addSeasonBtn" class="btn small">＋シーズン追加</button>
-        <button id="renameSeasonBtn" class="btn small">名称変更</button>
-        <button id="deleteSeasonBtn" class="btn small danger">削除</button>
-        </div>
-        <div class="season-help">右の入力欄に S1、S2 などを入力し、「＋シーズン追加」を押してください。新規構築は表示中のシーズンへ追加されます。</div>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -71,6 +48,51 @@
   </section>
 </div>
 
+
+<div id="settingsMenu" class="menu-backdrop" aria-hidden="true">
+  <aside class="settings-drawer" role="dialog" aria-modal="true" aria-label="設定メニュー">
+    <div class="settings-drawer-head"><h3>設定・表示</h3><button id="closeMenuBtn" class="icon-close" aria-label="閉じる">×</button></div>
+
+    <section class="menu-section">
+      <div class="menu-label">表示する構築</div>
+      <div class="team-scope-tabs menu-scope-tabs" role="tablist" aria-label="構築区分">
+        <button class="team-scope-tab active" data-team-scope="world" role="tab">🌍 World Team</button>
+        <button class="team-scope-tab" data-team-scope="my" role="tab">⭐ My Team</button>
+      </div>
+    </section>
+
+    <section class="menu-section season-panel menu-season-panel">
+      <div class="season-panel-title">シーズン管理</div>
+      <div class="seasonbar">
+        <strong>表示中</strong>
+        <select id="seasonSelect"></select>
+        <input id="newSeasonInput" class="season-new-input" placeholder="例：S36" aria-label="新しいシーズン名">
+        <button id="addSeasonBtn" class="btn small">＋シーズン追加</button>
+        <button id="renameSeasonBtn" class="btn small">名称変更</button>
+        <button id="deleteSeasonBtn" class="btn small danger">削除</button>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="menu-label">データ</div>
+      <div class="menu-action-grid">
+        <button id="exportBtn" class="btn">書き出し</button>
+        <button id="importBtn" class="btn">読み込み</button>
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </div>
+    </section>
+
+    <section class="menu-section account menu-account">
+      <div class="menu-label">Firebase・アカウント</div>
+      <div class="account-status-row"><span id="syncState" class="sync-state">この端末に保存</span><img id="userPhoto" alt="" style="display:none"></div>
+      <div class="menu-action-grid one-column">
+        <button id="firebaseSetupBtn" class="btn">Firebase設定</button>
+        <button id="loginBtn" class="btn primary">Googleログイン</button>
+        <button id="logoutBtn" class="btn" style="display:none">ログアウト</button>
+      </div>
+    </section>
+  </aside>
+</div>
 <div id="pokemonSearchModal" class="modal-backdrop"><div class="sheet pokemon-search-sheet">
   <h3>ポケモン検索</h3>
   <p class="sub">登録済みの構築に含まれるポケモンから探します。</p>
@@ -95,9 +117,9 @@
 </div></div>
 <div id="toast" class="toast"></div>
 
-<script src="pokemon-data-v11.js"></script>
-<script src="moves-data-v11.js"></script>
-<script src="app-v11.js" defer></script>
+<script src="pokemon-data-v12.js"></script>
+<script src="moves-data-v12.js"></script>
+<script src="app-v12.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
