@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.8.0</title>
-<link rel="stylesheet" href="styles-v8.css">
+<title>ポケモン構築管理 Ver.9.0</title>
+<link rel="stylesheet" href="styles-v9.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -28,6 +28,10 @@
           <button id="logoutBtn" class="btn" style="display:none">ログアウト</button>
           <img id="userPhoto" alt="" style="display:none">
         </div>
+      </div>
+      <div class="team-scope-tabs" role="tablist" aria-label="構築区分">
+        <button class="team-scope-tab active" data-team-scope="world" role="tab">🌍 World Team</button>
+        <button class="team-scope-tab" data-team-scope="my" role="tab">⭐ My Team</button>
       </div>
       <div class="season-panel">
         <div class="season-panel-title">シーズン管理</div>
@@ -91,9 +95,9 @@
 </div></div>
 <div id="toast" class="toast"></div>
 
-<script src="pokemon-data-v8.js"></script>
-<script src="moves-data-v8.js"></script>
-<script src="app-v8.js" defer></script>
+<script src="pokemon-data-v9.js"></script>
+<script src="moves-data-v9.js"></script>
+<script src="app-v9.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
