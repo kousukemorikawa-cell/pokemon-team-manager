@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.7.0</title>
-<link rel="stylesheet" href="styles-v7.css">
+<title>ポケモン構築管理 Ver.8.0</title>
+<link rel="stylesheet" href="styles-v8.css">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#3ebeb5">
 </head>
 <body>
 <div class="app">
@@ -89,11 +91,11 @@
 </div></div>
 <div id="toast" class="toast"></div>
 
-<script src="pokemon-data-v7.js"></script>
-<script src="app-v7.js" defer></script>
+<script src="pokemon-data-v8.js"></script>
+<script src="moves-data-v8.js"></script>
+<script src="app-v8.js" defer></script>
 <script>
-// 古い版が残らないよう、以前登録したService Workerを解除します。
-if("serviceWorker" in navigator){addEventListener("load",async()=>{for(const r of await navigator.serviceWorker.getRegistrations())await r.unregister();if(window.caches){for(const k of await caches.keys())await caches.delete(k)}})}
+if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
 </body>
 </html>

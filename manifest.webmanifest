@@ -1,9 +1,21 @@
 {
-  "name": "ポケモン構築管理 Ver.1.0",
+  "name": "ポケモン構築管理 Ver.8",
   "short_name": "構築管理",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f7fb",
-  "theme_color": "#315efb",
-  "icons": []
+  "background_color": "#3ebeb5",
+  "theme_color": "#279a97",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
