@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.1.0</title>
-<link rel="stylesheet" href="styles.css?v=3">
+<title>ポケモン構築管理 Ver.4.0</title>
+<link rel="stylesheet" href="styles-v4.css">
 <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
@@ -31,11 +31,12 @@
         <div class="seasonbar">
         <strong>表示中</strong>
         <select id="seasonSelect"></select>
-        <button id="addSeasonBtn" class="btn small">＋追加</button>
+        <input id="newSeasonInput" class="season-new-input" placeholder="例：S36" aria-label="新しいシーズン名">
+        <button id="addSeasonBtn" class="btn small">＋シーズン追加</button>
         <button id="renameSeasonBtn" class="btn small">名称変更</button>
         <button id="deleteSeasonBtn" class="btn small danger">削除</button>
         </div>
-        <div class="season-help">「＋追加」で S1、S2 などを作成できます。新規構築は表示中のシーズンへ追加されます。</div>
+        <div class="season-help">右の入力欄に S1、S2 などを入力し、「＋シーズン追加」を押してください。新規構築は表示中のシーズンへ追加されます。</div>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -71,8 +72,11 @@
 </div></div>
 <div id="toast" class="toast"></div>
 
-<script src="pokemon-data.js?v=3"></script>
-<script src="app.js?v=3" defer></script>
-<script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}))}</script>
+<script src="pokemon-data-v4.js"></script>
+<script src="app-v4.js" defer></script>
+<script>
+// 古い版が残らないよう、以前登録したService Workerを解除します。
+if("serviceWorker" in navigator){addEventListener("load",async()=>{for(const r of await navigator.serviceWorker.getRegistrations())await r.unregister();if(window.caches){for(const k of await caches.keys())await caches.delete(k)}})}
+</script>
 </body>
 </html>

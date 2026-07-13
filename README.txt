@@ -1,12 +1,15 @@
-ポケモン構築管理 Ver.1.0
+ポケモン構築管理 Ver.4.0
 
-GitHubのリポジトリ直下に、このフォルダ内の6ファイルをすべてアップロードしてください。
-- index.html
-- styles.css
-- app.js
-- pokemon-data.js
-- manifest.webmanifest
-- service-worker.js
+GitHub Pagesへ、このフォルダ内のファイルをすべて上書きアップロードしてください。
+画像フォルダ・Firebase Storageは不要です。
 
-imagesフォルダは不要です。ポケモン名を日本語で入力すると、PokeAPI spritesの画像を自動表示します。
-FirebaseはAuthenticationとFirestoreだけを使用し、Storageは使用しません。
+主な追加機能
+・シーズン名を直接入力して追加
+・メガシンカ、リージョンフォーム、ロトム等の画像・種族値取得
+・6体それぞれの持ち物入力と右下アイコン表示
+・性格選択
+・個体値0〜31、努力値0〜252からLv50実数値を自動計算
+
+更新後はページを一度閉じて開き直してください。古いService Workerは自動解除されます。
+
+【重要】アップロード後、サイトURLの末尾を /force-update.html にして一度開いてください。旧キャッシュを削除して最新版へ移動します。
