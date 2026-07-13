@@ -1,0 +1,9 @@
+{
+  "name": "ポケモン構築管理 Ver.1.0",
+  "short_name": "構築管理",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#315efb",
+  "icons": []
+}

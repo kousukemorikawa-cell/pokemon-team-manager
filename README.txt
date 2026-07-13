@@ -1,11 +1,12 @@
-このフォルダにポケモン画像を入れてください。
+ポケモン構築管理 Ver.1.0
 
-ファイル名は、サイトで入力するポケモン名と同じにします。
-例：
-  カイリュー.png
-  サーフゴー.webp
-  ハバタクカミ.jpg
+GitHubのリポジトリ直下に、このフォルダ内の6ファイルをすべてアップロードしてください。
+- index.html
+- styles.css
+- app.js
+- pokemon-data.js
+- manifest.webmanifest
+- service-worker.js
 
-対応形式：.png / .webp / .jpg / .jpeg
-同じ名前のファイルが複数ある場合は、png → webp → jpg → jpeg の順で表示します。
-GitHub Pagesへ更新するときは、この images フォルダも index.html と一緒にアップロードしてください。
+imagesフォルダは不要です。ポケモン名を日本語で入力すると、PokeAPI spritesの画像を自動表示します。
+FirebaseはAuthenticationとFirestoreだけを使用し、Storageは使用しません。
