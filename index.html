@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.5.0</title>
-<link rel="stylesheet" href="styles-v5.css">
+<title>ポケモン構築管理 Ver.7.0</title>
+<link rel="stylesheet" href="styles-v7.css">
 <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
@@ -15,6 +15,7 @@
       <div class="toolbar">
         <input id="searchInput" class="search" placeholder="使用者・順位・構築名・ポケモン名で検索" />
         <button id="newTeamBtn" class="btn primary">＋新規</button>
+        <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
         <button id="exportBtn" class="btn">書き出し</button>
         <button id="importBtn" class="btn">読み込み</button>
         <input id="importFile" type="file" accept="application/json" hidden />
@@ -45,6 +46,14 @@
     <button id="floatingAdd" class="floating-add" aria-label="新規構築">＋</button>
   </section>
 
+  <section id="pokemonView" class="view">
+    <div class="detail-head">
+      <button id="pokemonBackBtn" class="btn">← 構築一覧</button>
+      <h2 id="pokemonPageTitle">ポケモン別一覧</h2>
+    </div>
+    <div id="pokemonPageContent"></div>
+  </section>
+
   <section id="detailView" class="view">
     <div class="detail-head">
       <button id="backBtn" class="btn">← 一覧</button>
@@ -55,6 +64,14 @@
     <div id="detailContent"></div>
   </section>
 </div>
+
+<div id="pokemonSearchModal" class="modal-backdrop"><div class="sheet pokemon-search-sheet">
+  <h3>ポケモン検索</h3>
+  <p class="sub">登録済みの構築に含まれるポケモンから探します。</p>
+  <div class="autocomplete-wrap"><input id="pokemonIndexSearch" class="search" placeholder="例：ニンフィア" autocomplete="off"><div id="pokemonIndexSuggestions" class="autocomplete-list"></div></div>
+  <div id="pokemonIndexQuickList" class="pokemon-quick-list"></div>
+  <button class="btn full" id="closePokemonSearchModal" style="margin-top:12px">閉じる</button>
+</div></div>
 
 <div id="tagModal" class="modal-backdrop"><div class="sheet"><h3>構築タグを選択</h3><div class="tag-options" id="tagOptions"></div><button class="btn full" id="closeTagModal" style="margin-top:12px">閉じる</button></div></div>
 <div id="firebaseModal" class="modal-backdrop"><div class="sheet"><h3>Firebase設定</h3>
@@ -72,8 +89,8 @@
 </div></div>
 <div id="toast" class="toast"></div>
 
-<script src="pokemon-data-v5.js"></script>
-<script src="app-v5.js" defer></script>
+<script src="pokemon-data-v7.js"></script>
+<script src="app-v7.js" defer></script>
 <script>
 // 古い版が残らないよう、以前登録したService Workerを解除します。
 if("serviceWorker" in navigator){addEventListener("load",async()=>{for(const r of await navigator.serviceWorker.getRegistrations())await r.unregister();if(window.caches){for(const k of await caches.keys())await caches.delete(k)}})}
