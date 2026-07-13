@@ -57,3 +57,7 @@ textarea{min-height:90px;resize:vertical}.full{width:100%}
 @media(max-width:600px){
  .app{padding:10px}.toolbar .btn{padding:8px 9px;font-size:13px}.team-row{padding:9px;border-radius:12px}.team-meta{grid-template-columns:1fr 1fr}.party{gap:4px}.mon{padding:3px}.mon-name{font-size:9px}.tag-btn{width:40px;height:40px}.drag-handle{padding:10px}.card-grid{grid-template-columns:1fr}.arrow{text-align:center;transform:rotate(90deg);padding:0}.detail-grid,.adjust-grid{grid-template-columns:1fr}.editor-party{grid-template-columns:repeat(2,1fr)}.matchup-party{grid-template-columns:repeat(3,1fr)}.matchup-head{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}
 }
+
+.season-panel{margin-top:12px;padding:12px;border:2px solid #8ea4d2;border-radius:14px;background:#eef4ff;box-shadow:0 2px 8px rgba(40,70,120,.08)}
+.season-panel-title{font-weight:800;font-size:14px;color:#294a82;margin-bottom:6px}.season-panel .seasonbar{margin-top:0}.season-help{font-size:12px;color:#53627b;margin-top:7px}.season-panel #addSeasonBtn{font-weight:800;background:#245fc7;color:#fff;border-color:#245fc7}
+@media(max-width:640px){.season-panel{padding:10px}.season-panel .seasonbar{display:grid;grid-template-columns:auto 1fr;gap:7px}.season-panel .seasonbar strong{align-self:center}.season-panel .seasonbar select{min-width:0;width:100%}.season-panel .seasonbar button{width:100%}}
