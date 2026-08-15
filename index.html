@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.18.1</title>
-<link rel="stylesheet" href="styles-v18.css">
+<title>ポケモン構築管理 Ver.19</title>
+<link rel="stylesheet" href="styles-v19.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -21,7 +21,7 @@
         <input id="searchInput" class="search" placeholder="使用者・順位・構築名・ポケモン名で検索" />
         <button id="newTeamBtn" class="btn primary">＋新規</button>
         <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
-        <button id="pairingBtn" class="btn">🧭 メタ研究</button>
+        <button id="pairingBtn" class="btn meta-research-btn">🧭 メタ研究</button>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -45,6 +45,7 @@
       <button id="newPairingBtn" class="btn primary">＋追加</button>
     </div>
     <div class="pairing-toolbar"><input id="pairingSearch" class="search" placeholder="並び・ポケモン・対策・補完・過去メモを検索"></div>
+    <div id="pairingStatusFilters" class="pairing-status-filters"></div>
     <div id="pairingSelectionNotice" class="selection-notice" hidden></div>
     <div id="pairingList" class="pairing-list"></div>
     <button id="pairingSelectionDone" class="btn primary full" hidden>選択を完了して構築へ戻る</button>
@@ -153,7 +154,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v18.js" defer></script>
+<script src="app-v19.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
