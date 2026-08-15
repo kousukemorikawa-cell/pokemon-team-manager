@@ -1,4 +1,4 @@
-const C='ptm-v18-meta-2';
+const C='ptm-v18-meta-3';
 const A=['./','./index.html','./styles-v18.css','./app-v18.js','./pokemon-data-v16.js','./moves-data-v16.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(A)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k))))]))});
