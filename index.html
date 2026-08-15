@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.17.1</title>
+<title>ポケモン構築管理 Ver.18</title>
 <link rel="stylesheet" href="styles-v17-1.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -21,7 +21,7 @@
         <input id="searchInput" class="search" placeholder="使用者・順位・構築名・ポケモン名で検索" />
         <button id="newTeamBtn" class="btn primary">＋新規</button>
         <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
-        <button id="pairingBtn" class="btn">👥 並び研究</button>
+        <button id="pairingBtn" class="btn">🧭 メタ研究</button>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -41,10 +41,10 @@
   <section id="pairingView" class="view">
     <div class="detail-head">
       <button id="pairingBackBtn" class="btn">← 構築一覧</button>
-      <h2>並び研究</h2>
+      <h2>メタ研究ノート</h2>
       <button id="newPairingBtn" class="btn primary">＋追加</button>
     </div>
-    <div class="pairing-toolbar"><input id="pairingSearch" class="search" placeholder="並び名・ポケモン名・強み・対策で検索"></div>
+    <div class="pairing-toolbar"><input id="pairingSearch" class="search" placeholder="並び・ポケモン・対策・補完・過去メモを検索"></div>
     <div id="pairingSelectionNotice" class="selection-notice" hidden></div>
     <div id="pairingList" class="pairing-list"></div>
     <button id="pairingSelectionDone" class="btn primary full" hidden>選択を完了して構築へ戻る</button>
