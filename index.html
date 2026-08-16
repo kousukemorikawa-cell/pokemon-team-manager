@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.29</title>
-<link rel="stylesheet" href="styles-v29.css">
+<title>ポケモン構築管理 Ver.30</title>
+<link rel="stylesheet" href="styles-v30.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -25,6 +25,7 @@
         <button id="damageCalcBtn" class="btn battle-tool-btn">⚔ ダメージ計算</button>
         <button id="battleMemoBtn" class="btn battle-memo-btn">📝 対戦メモ</button>
         <button id="damageHistoryMenuBtn" class="btn damage-history-menu-btn">📚 計算履歴</button>
+        <button id="someoneTeamsBtn" class="btn someone-teams-btn">誰かの構築</button>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -81,10 +82,11 @@
     <div class="detail-head"><button id="battleMemoBackBtn" class="btn">← 構築一覧</button><h2>対戦メモ</h2></div>
     <div id="battleMemoContent"></div>
   </section>
-  <section id="teamPickerView" class="view"><div class="detail-head"><button id="teamPickerBackBtn" class="btn">← 構築選択へ戻る</button><h2 id="teamPickerTitle">構築を選択</h2></div><input id="teamPickerSearch" class="search" placeholder="構築名・使用者・順位・ポケモン名で検索"><div id="teamPickerList" class="team-picker-list"></div></section>
+  <section id="teamPickerView" class="view"><div class="detail-head"><button id="teamPickerBackBtn" class="btn">← 構築選択へ戻る</button><h2 id="teamPickerTitle">構築を選択</h2><button id="pickerNewOpponent" class="btn primary" hidden>＋ 相手の構築を登録</button></div><input id="teamPickerSearch" class="search" placeholder="構築名・使用者・順位・ポケモン名で検索"><div id="teamPickerList" class="team-picker-list"></div></section>
   <section id="damageHistoryView" class="view"><div class="detail-head"><button id="damageHistoryBackBtn" class="btn">← ダメージ計算</button><h2>計算履歴</h2></div><input id="damageHistorySearch" class="search" placeholder="ポケモン名・技名で検索"><div id="damageHistoryList" class="history-page-list"></div></section>
   <section id="battleHistoryView" class="view"><div class="detail-head"><button id="battleHistoryBackBtn" class="btn">← 対戦メモ</button><h2>対戦結果一覧</h2></div><div id="battleHistorySummary"></div><div id="battleHistoryList" class="history-page-list"></div></section>
 </div>
+<datalist id="savedMoveNames"></datalist>
 
 
 <div id="settingsMenu" class="menu-backdrop" aria-hidden="true">
@@ -176,7 +178,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v29.js" defer></script>
+<script src="app-v30.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
