@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.27</title>
-<link rel="stylesheet" href="styles-v27.css">
+<title>ポケモン構築管理 Ver.29</title>
+<link rel="stylesheet" href="styles-v29.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -22,7 +22,9 @@
         <button id="newTeamBtn" class="btn primary">＋新規</button>
         <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
         <button id="pairingBtn" class="btn meta-research-btn">🧭 メタ研究</button>
-        <button id="battleToolBtn" class="btn battle-tool-btn">⚔ ダメージ計算・対戦メモ</button>
+        <button id="damageCalcBtn" class="btn battle-tool-btn">⚔ ダメージ計算</button>
+        <button id="battleMemoBtn" class="btn battle-memo-btn">📝 対戦メモ</button>
+        <button id="damageHistoryMenuBtn" class="btn damage-history-menu-btn">📚 計算履歴</button>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -72,8 +74,12 @@
   </section>
 
   <section id="battleToolView" class="view">
-    <div class="detail-head"><button id="battleToolBackBtn" class="btn">← 構築一覧</button><h2>ダメージ計算・対戦メモ</h2></div>
+    <div class="detail-head"><button id="battleToolBackBtn" class="btn">← 構築一覧</button><h2>ダメージ計算</h2></div>
     <div id="battleToolContent"></div>
+  </section>
+  <section id="battleMemoView" class="view">
+    <div class="detail-head"><button id="battleMemoBackBtn" class="btn">← 構築一覧</button><h2>対戦メモ</h2></div>
+    <div id="battleMemoContent"></div>
   </section>
   <section id="teamPickerView" class="view"><div class="detail-head"><button id="teamPickerBackBtn" class="btn">← 構築選択へ戻る</button><h2 id="teamPickerTitle">構築を選択</h2></div><input id="teamPickerSearch" class="search" placeholder="構築名・使用者・順位・ポケモン名で検索"><div id="teamPickerList" class="team-picker-list"></div></section>
   <section id="damageHistoryView" class="view"><div class="detail-head"><button id="damageHistoryBackBtn" class="btn">← ダメージ計算</button><h2>計算履歴</h2></div><input id="damageHistorySearch" class="search" placeholder="ポケモン名・技名で検索"><div id="damageHistoryList" class="history-page-list"></div></section>
@@ -114,6 +120,13 @@
         <button id="addSeasonBtn" class="btn small">＋シーズン追加</button>
         <button id="renameSeasonBtn" class="btn small">名称変更</button>
         <button id="deleteSeasonBtn" class="btn small danger">削除</button>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="menu-label">ツール</div>
+      <div class="menu-action-grid one-column">
+        <button id="damageHistoryDrawerBtn" class="btn damage-history-menu-btn">📚 計算履歴を見る</button>
       </div>
     </section>
 
@@ -163,7 +176,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v27.js" defer></script>
+<script src="app-v29.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
