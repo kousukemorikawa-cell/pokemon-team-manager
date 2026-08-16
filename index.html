@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.25</title>
-<link rel="stylesheet" href="styles-v25.css">
+<title>ポケモン構築管理 Ver.26</title>
+<link rel="stylesheet" href="styles-v26.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -22,6 +22,7 @@
         <button id="newTeamBtn" class="btn primary">＋新規</button>
         <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
         <button id="pairingBtn" class="btn meta-research-btn">🧭 メタ研究</button>
+        <button id="battleToolBtn" class="btn battle-tool-btn">⚔ ダメージ計算・対戦メモ</button>
       </div>
       <div class="filters" id="filters"></div>
       <div class="counts" id="counts"></div>
@@ -68,6 +69,11 @@
       <button id="deleteTeamBtn" class="btn danger">削除</button>
     </div>
     <div id="detailContent"></div>
+  </section>
+
+  <section id="battleToolView" class="view">
+    <div class="detail-head"><button id="battleToolBackBtn" class="btn">← 構築一覧</button><h2>ダメージ計算・対戦メモ</h2></div>
+    <div id="battleToolContent"></div>
   </section>
 </div>
 
@@ -154,7 +160,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v25.js" defer></script>
+<script src="app-v26.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
