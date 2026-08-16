@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.41</title>
-<link rel="stylesheet" href="styles-v41.css">
+<title>ポケモン構築管理 Ver.42</title>
+<link rel="stylesheet" href="styles-v42.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -20,7 +20,7 @@
       <div class="toolbar compact-toolbar">
         <input id="searchInput" class="search" placeholder="使用者・順位・構築名・ポケモン名で検索" />
         <button id="newTeamBtn" class="btn primary">＋新規</button>
-        <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモン検索</button>
+        <button id="pokemonSearchBtn" class="btn pokemon-search-btn">🔍 ポケモンボックス</button>
         <button id="pairingBtn" class="btn meta-research-btn">🧭 メタ研究</button>
         <button id="damageCalcBtn" class="btn battle-tool-btn">⚔ ダメージ計算</button>
         <button id="battleMemoBtn" class="btn battle-memo-btn">📝 対戦メモ</button>
@@ -153,10 +153,11 @@
   </aside>
 </div>
 <div id="pokemonSearchModal" class="modal-backdrop"><div class="sheet pokemon-search-sheet">
-  <h3>ポケモン検索</h3>
-  <p class="sub">登録済みの構築に含まれるポケモンから探します。</p>
+  <h3>ポケモンボックス</h3>
+  <p class="sub">登録済みのポケモンをタイプで絞り込み、タップして詳細を確認できます。</p>
   <div class="autocomplete-wrap"><input id="pokemonIndexSearch" class="search" placeholder="例：ニンフィア" autocomplete="off"><div id="pokemonIndexSuggestions" class="autocomplete-list"></div></div>
   <div id="pokemonIndexQuickList" class="pokemon-quick-list"></div>
+  <div id="pokemonBoxTypes" class="pokemon-box-types"></div>
   <button class="btn full" id="closePokemonSearchModal" style="margin-top:12px">閉じる</button>
 </div></div>
 
@@ -178,7 +179,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v41.js" defer></script>
+<script src="app-v42.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
