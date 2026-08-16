@@ -1,4 +1,4 @@
-const C='ptm-v20-meta-links';
+const C='ptm-v20-1-cloud-fix';
 const A=['./','./index.html','./styles-v20.css','./app-v20.js','./pokemon-data-v16.js','./moves-data-v16.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(A)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k))))]))});
