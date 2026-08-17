@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.53</title>
-<link rel="stylesheet" href="styles-v53.css">
+<title>ポケモン構築管理 Ver.54</title>
+<link rel="stylesheet" href="styles-v54.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -86,6 +86,8 @@
   <section id="damageHistoryView" class="view"><div class="detail-head"><button id="damageHistoryBackBtn" class="btn">← ダメージ計算</button><h2>計算履歴</h2></div><input id="damageHistorySearch" class="search" placeholder="ポケモン名・技名で検索"><div id="damageHistoryList" class="history-page-list"></div></section>
   <section id="battleHistoryView" class="view"><div class="detail-head"><button id="battleHistoryBackBtn" class="btn">← 対戦メモ</button><h2>対戦結果一覧</h2></div><div id="battleHistorySummary"></div><div id="battleHistoryList" class="history-page-list"></div></section>
 </div>
+<button id="pokemonBoxAdd" class="pokemon-box-add" aria-label="個体を新規登録">＋</button>
+<button id="scrollTopButton" class="scroll-top-button" aria-label="ページ上部へ戻る">↑</button>
 <datalist id="savedMoveNames"></datalist>
 
 
@@ -179,7 +181,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v53.js" defer></script>
+<script src="app-v54.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
