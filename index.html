@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ポケモン構築管理 Ver.57</title>
-<link rel="stylesheet" href="styles-v57.css">
+<title>ポケモン構築管理 Ver.59</title>
+<link rel="stylesheet" href="styles-v59.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="theme-color" content="#3ebeb5">
@@ -157,7 +157,7 @@
 <div id="pokemonSearchModal" class="modal-backdrop"><div class="sheet pokemon-search-sheet">
   <h3>ポケモンボックス</h3>
   <p class="sub">登録済みのポケモンをタイプで絞り込み、タップして詳細を確認できます。</p>
-  <div class="autocomplete-wrap"><input id="pokemonIndexSearch" class="search" placeholder="例：ニンフィア" autocomplete="off"><div id="pokemonIndexSuggestions" class="autocomplete-list"></div></div>
+  <div id="pokemonBoxSearchRow" class="pokemon-box-search-row"><button type="button" id="pokemonBoxBackInline" class="pokemon-box-back-inline">← 戻る</button><div class="autocomplete-wrap"><input id="pokemonIndexSearch" class="search" placeholder="例：ニンフィア" autocomplete="off"><div id="pokemonIndexSuggestions" class="autocomplete-list"></div></div><button type="button" id="pokemonBoxAll" class="box-type-all-inline active">全</button></div>
   <div id="pokemonIndexQuickList" class="pokemon-quick-list"></div>
   <div id="pokemonBoxTypes" class="pokemon-box-types"></div>
   <button class="btn full" id="closePokemonSearchModal" style="margin-top:12px">閉じる</button>
@@ -181,7 +181,7 @@
 
 <script src="pokemon-data-v16.js"></script>
 <script src="moves-data-v16.js"></script>
-<script src="app-v57.js" defer></script>
+<script src="app-v59.js" defer></script>
 <script>
 if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.warn))}
 </script>
